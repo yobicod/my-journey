@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import { STYLE } from "../constants/style";
 
 const Navbar = () => {
   interface INavMenu {
@@ -12,35 +14,33 @@ const Navbar = () => {
     },
     {
       id: 2,
-      menu: "About me",
+      menu: "About",
     },
     {
       id: 3,
-      menu: "Portfolio",
+      menu: "Experiences",
     },
     {
       id: 4,
       menu: "Services",
     },
-    {
-      id: 5,
-      menu: "Experience",
-    },
   ];
+
   return (
-    <div className='w-screen h-[64px] mx-auto flex'>
-      <div className='w-2/12 flex justify-center items-center border-2'>
-        <h1>logo</h1>
-      </div>
-      <div className='w-10/12 flex justify-evenly items-center border-2'>
+    <div className='container flex justify-center items-center'>
+      <div className='w-[388px] h-[47px] flex justify-around items-center rounded-full p-1 mt-24 fixed shadow-lg '>
         {navMenu.map((el) => {
           return (
-            <Link href={""} key={el.id}>
+            <Link
+              href={""}
+              key={el.id}
+              className={`text-xs`}
+              style={{ color: STYLE.navText }}
+            >
               {el.menu}
             </Link>
           );
         })}
-        <button>Hire me</button>
       </div>
     </div>
   );
